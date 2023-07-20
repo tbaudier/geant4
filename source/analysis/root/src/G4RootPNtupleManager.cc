@@ -141,7 +141,7 @@ void G4RootPNtupleManager::CreateNtupleFromMain(
                              tools::wroot::ntuple* mainNtuple)
 {
   Message(kVL4, "create from main", "pntuple", mainNtuple->name());
-
+  Warn((&ntupleDescription->GetDescription())->GetFileName(), fkClass, "CreateNtupleFromMainThomas");
   auto file = fMainNtupleManager->GetNtupleFile(&ntupleDescription->GetDescription());
   if ( ! file ) {
     Warn("Cannot create pntuple. Main ntuple file does not exist.",
